@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\SQLite.3.13.0\build\net45\SQLite.props" Condition="Exists('..\packages\SQLite.3.13.0\build\net45\SQLite.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B1C54612-BF78-4B4B-8A45-1394642F6BE6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>APPS</RootNamespace>
+    <AssemblyName>APPS</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo_Ulx_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutomaticUpdater">
+      <HintPath>C:\Program Files (x86)\wyBuild\AutomaticUpdater\Microsoft .NET 4.0\AutomaticUpdater.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.SQLite, Version=1.0.111.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.111.0\lib\net451\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.111.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.111.0\lib\net451\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.111.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.111.0\lib\net451\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2019.2.618.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.GridView, Version=2019.2.618.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.RichTextEditor, Version=2019.2.618.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.UI, Version=2019.2.618.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="TelerikCommon, Version=2019.2.618.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CryptoFlash.cs" />
+    <Compile Include="MenuApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuApp.Designer.cs">
+      <DependentUpon>MenuApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SplashScreen1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen1.Designer.cs">
+      <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitForm.Designer.cs">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraFormEbook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XtraFormEbook.Designer.cs">
+      <DependentUpon>XtraFormEbook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraFormFlash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XtraFormFlash.Designer.cs">
+      <DependentUpon>XtraFormFlash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraFormFlow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XtraFormFlow.Designer.cs">
+      <DependentUpon>XtraFormFlow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraFormJurnal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XtraFormJurnal.Designer.cs">
+      <DependentUpon>XtraFormJurnal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraFormKamus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XtraFormKamus.Designer.cs">
+      <DependentUpon>XtraFormKamus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraFormSOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XtraFormSOP.Designer.cs">
+      <DependentUpon>XtraFormSOP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraFormTim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XtraFormTim.designer.cs">
+      <DependentUpon>XtraFormTim.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MenuApp.resx">
+      <DependentUpon>MenuApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SplashScreen1.resx">
+      <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitForm.resx">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraFormEbook.resx">
+      <DependentUpon>XtraFormEbook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraFormFlash.resx">
+      <DependentUpon>XtraFormFlash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraFormFlow.resx">
+      <DependentUpon>XtraFormFlow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraFormJurnal.resx">
+      <DependentUpon>XtraFormJurnal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraFormKamus.resx">
+      <DependentUpon>XtraFormKamus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraFormSOP.resx">
+      <DependentUpon>XtraFormSOP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraFormTim.resx">
+      <DependentUpon>XtraFormTim.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimaze.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon Keperawatan Ukom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Simulasi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\footer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tips_Trick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\youtube.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Check_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\instagram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tim_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\perpus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kamus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tips.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jurnal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Form.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Work Flow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\obat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1Key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2Key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3Key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="ShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ukom_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ukom_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ukom_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ukom_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ukom_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ukom_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ukom_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ukom_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ukom_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ukom_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ukom_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ukom_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ukom_13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ukom_14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ukom_15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ukom_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ukom_17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ukom_18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ukom_19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\selecttool_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Splash Screen ukep.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo_Ulx_icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\SQLite.3.13.0\build\net45\SQLite.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SQLite.3.13.0\build\net45\SQLite.props'))" />
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.111.0\build\net451\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.111.0\build\net451\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.111.0\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.111.0\build\net451\System.Data.SQLite.Core.targets')" />
+</Project>
